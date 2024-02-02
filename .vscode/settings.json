@@ -1,0 +1,8 @@
+{
+    "maven.terminal.favorites": [
+        {
+            "command": "exec:java -q",
+            "debug": false
+        }
+    ]
+}
