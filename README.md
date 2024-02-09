@@ -1,7 +1,7 @@
 ![Green square on deep blue background with words "Allegheny Code Golf Association" in foreground, white](https://github.com/allegheny-college-cmpsc-201-spring-2024/golf/assets/1552764/d3ee6a91-74c9-482b-84eb-ec9a2e8dee05)
 
-[![Language: Prolog](https://img.shields.io/badge/Language-Scheme-brown.svg)](https://scheme.com/tspl4/start.html#./start:h0)
-![Par: 772 bytes](https://img.shields.io/badge/Par-408_bytes-green)
+[![Language: Prolog](https://img.shields.io/badge/Language-Prolog-red.svg)](https://www.infoq.com/presentations/prolog-introduction/)
+![Par: 772 bytes](https://img.shields.io/badge/Par-772_bytes-green)
 
 # ⛳ Code Golf: Hole 4 - Why Can't Peter Be Friends?
 
