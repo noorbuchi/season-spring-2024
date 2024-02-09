@@ -32,7 +32,7 @@ jobs:
       id: score
       run: |
         export PAR=772
-        export BYTE_SCORE=$(wc -c 3/src/test/resources/main.scm | awk '{print $1}')
+        export BYTE_SCORE=$(wc -c 4/src/test/resources/main.pl | awk '{print $1}')
         export DIFFERENCE=$((BYTE_SCORE-PAR))
         gatorgrade --config gatorgrade.yml --report file json gatorgrade_summary.json
         cat > $GITHUB_STEP_SUMMARY << EOF 
