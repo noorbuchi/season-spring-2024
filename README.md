@@ -3,43 +3,45 @@
 [![Language: Scheme](https://img.shields.io/badge/Language-Scheme-brown.svg)](https://scheme.com/tspl4/start.html#./start:h0)
 ![Par: 408 bytes](https://img.shields.io/badge/Par-408_bytes-green)
 
-# ⛳ Code Golf: Hole 3 - A Scheme Afoot
+# ⛳ Code Golf: Hole 4 - Why Can't Peter Be Friends?
 
-Something's fishy about this week's challenge...namely that your program must create the following string:
-```
-ABACADAEAFAGAHAIAJAKALAMANAOAPAQARASATAUAVAWAXAYAZ
-```
-As if that wasn't enough, you are required to complete this challenge in the `Scheme` language, a dialect of the _very_
-historically-significant `Lisp` language. If you're not a certified old head, you might want to have a look at the..._scheme_
-behind this all:
+Peter is known as a loner. Why? Because they've got so many _enemies_! However, this isn't so much about enemies; it's more
+about _friends_. As the saying goes: the enemy of my enemy is, well, at least not my enemy (i.e., my friend). Here, there
+are _3_ people who are friends: namely, because they're all Peter's enemy:
 
-* [_The Scheme Programming Language_, Ch. 2: Getting Started](https://scheme.com/tspl4/start.html#./start:h0)
+* Anna
+* John
+* Mary
+
+(The response of the program to the test should really be, `annajohnmary`.)
+
+To get up to speed on this, you might review the wonderful Prolog primer: "I Don't Know Prolog, and So Can You."
+
+* [I Don't Know Prolog, and So Can You](https://www.infoq.com/presentations/prolog-introduction/)
 
 This repository uses the Apache Maven build platform to compile the entire interpreter (provided in the `3/src` folder).
-The challenge must be completed in the `Scheme` file located at:
+The challenge must be completed in the `Prolog` file located at:
 
-* [3/src/test/resources/main.scm](3/src/test/resources/main.scm)
+* [4/src/test/resources/main.pl](4/src/test/resources/main.pl)
 
-Finally, a _big big big thanks_ to GitHub user `Reborg` for posting code for Peter Norvig's original `jScheme` interpreter,
-allowing us to keep working with Java build files to enable our deeper exploration of languages without installing additional
-cruft. You can [check it out here](https://github.com/reborg/jscheme).
+Finally, a _big big big thanks_ to GitHub user `s-webber` for creating the `projog` project to parse Prolog in Java. You 
+can check out more at [projog's GitHub](https://github.com/s-webber/projog).
 
 ## Tips
 
-Tips for golfing are available for both the Scheme language and as general pointers:
+Tips for golfing are available for Prolog language and as general pointers:
 
-* [Tips for golfing with Scheme](https://codegolf.stackexchange.com/questions/77129/tips-for-golfing-in-racket-scheme)
+* [Tips for Golfing in Prolog](https://code.golf/wiki/langs/prolog)
 * [General tips for golfing with any language](https://codegolf.stackexchange.com/questions/5285/tips-for-golfing-in-all-languages)
-
 
 ## Requirements
 
-* this challenge must be completed using the `Scheme` language
+* this challenge must be completed using the `Prolog` language
 * the program must run and output the following string:
 ```
-ABACADAEAFAGAHAIAJAKALAMANAOAPAQARASATAUAVAWAXAYAZ
+annajohnmary
 ```
-* the program must be written in the `3/src/test/resources/main.scm` file
+* the program must be written in the `4/src/test/resources/main.pl` file
 
 ## Infrastructure
 
