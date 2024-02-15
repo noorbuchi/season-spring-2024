@@ -1,7 +1,7 @@
-package lambda.reduction.delta;
+package com.interpreter.lambda.reduction.delta;
 
-import lambda.ast.*;
-import lambda.reduction.LambdaTransformation;
+import com.interpreter.lambda.ast.*;
+import com.interpreter.lambda.reduction.LambdaTransformation;
 
 import java.util.ArrayList;
 import java.util.List;

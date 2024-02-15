@@ -1,12 +1,12 @@
-package haskell;
+package com.interpreter.haskell;
 
-import haskell.ast.*;
-import haskell.reduction.ComplexToSimpleReducer;
-import haskell.reduction.SimpleToLambdaReducer;
-import lambda.ast.ASTTerm;
-import lambda.reduction.WHNOReducer;
-import lambda.type.TypeChecker;
-import lambda.type.TypeException;
+import com.interpreter.haskell.ast.*;
+import com.interpreter.haskell.reduction.ComplexToSimpleReducer;
+import com.interpreter.haskell.reduction.SimpleToLambdaReducer;
+import com.interpreter.lambda.ast.ASTTerm;
+import com.interpreter.lambda.reduction.WHNOReducer;
+import com.interpreter.lambda.type.TypeChecker;
+import com.interpreter.lambda.type.TypeException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  * That is, it can evaluate an expression given a haskel program.
  */
 public class HaskellInterpreter {
-    private haskell.ast.ASTProgram program;
+    private com.interpreter.haskell.ast.ASTProgram program;
     private ComplexToSimpleReducer complexToSimpleReducer;
     private SimpleToLambdaReducer simpleToLambdaReducer;
     private TypeChecker typeChecker;
@@ -91,7 +91,7 @@ public class HaskellInterpreter {
         }
 
         // 2. reduce simple haskell expression to lambda expression
-        lambda.ast.ASTTerm lambdaTerm = simpleExpr.accept(simpleToLambdaReducer);
+        com.interpreter.lambda.ast.ASTTerm lambdaTerm = simpleExpr.accept(simpleToLambdaReducer);
         if (verbose) {
             System.out.println(lambdaTerm);
             System.out.println("\n-- The type of the expression is: ");
@@ -107,7 +107,7 @@ public class HaskellInterpreter {
         }
 
         // 4. reduce lambda expression with WHNO
-        lambda.ast.ASTTerm result = whnoReducer.reduceToWHNF(lambdaTerm, verbose);
+        com.interpreter.lambda.ast.ASTTerm result = whnoReducer.reduceToWHNF(lambdaTerm, verbose);
         if (verbose) {
             System.out.println("\n-- The final result is: ");
             System.out.println(result);

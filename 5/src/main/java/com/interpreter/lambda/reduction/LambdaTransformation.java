@@ -1,8 +1,8 @@
-package lambda.reduction;
+package com.interpreter.lambda.reduction;
 
-import lambda.ast.*;
-import lambda.ast.ASTApplication;
-import lambda.ast.ASTVariable;
+import com.interpreter.lambda.ast.*;
+import com.interpreter.lambda.ast.ASTApplication;
+import com.interpreter.lambda.ast.ASTVariable;
 
 import java.util.Optional;
 

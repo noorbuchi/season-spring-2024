@@ -1,4 +1,4 @@
-package haskell.ast;
+package com.interpreter.haskell.ast;
 
 import java.util.HashSet;
 import java.util.List;

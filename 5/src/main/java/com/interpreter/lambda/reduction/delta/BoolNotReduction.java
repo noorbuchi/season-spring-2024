@@ -1,7 +1,7 @@
-package lambda.reduction.delta;
+package com.interpreter.lambda.reduction.delta;
 
-import lambda.ast.ASTConstant;
-import lambda.ast.ASTTerm;
+import com.interpreter.lambda.ast.ASTConstant;
+import com.interpreter.lambda.ast.ASTTerm;
 
 import java.util.List;
 import java.util.Optional;

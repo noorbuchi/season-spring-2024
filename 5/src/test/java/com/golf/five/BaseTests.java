@@ -42,7 +42,7 @@ class BaseTests {
   }
 
   static Stream<Arguments> testProgramOutput() throws Exception {
-    URL resource = BaseTests.class.getClassLoader().getResource("main.pl");
+    URL resource = BaseTests.class.getClassLoader().getResource("main.hs");
     File file = Paths.get(resource.toURI()).toFile();
     String absPath = file.getAbsolutePath();
     return Stream.of(

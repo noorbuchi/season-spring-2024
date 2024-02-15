@@ -1,6 +1,6 @@
-package haskell.reduction;
+package com.interpreter.haskell.reduction;
 
-import haskell.ast.*;
+import com.interpreter.haskell.ast.*;
 
 /**
  * Interface for visitors which transform complex haskell expressions.

@@ -1,6 +1,6 @@
-package lambda.type;
+package com.interpreter.lambda.type;
 
-import haskell.ast.*;
+import com.interpreter.haskell.ast.*;
 
 /**
  * This class can unify two types.

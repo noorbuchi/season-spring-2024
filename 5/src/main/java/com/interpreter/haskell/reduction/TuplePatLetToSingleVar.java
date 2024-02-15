@@ -1,7 +1,7 @@
-package haskell.reduction;
+package com.interpreter.haskell.reduction;
 
 
-import haskell.ast.*;
+import com.interpreter.haskell.ast.*;
 
 import java.util.ArrayList;
 import java.util.Collections;

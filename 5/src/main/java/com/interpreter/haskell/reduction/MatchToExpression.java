@@ -1,6 +1,6 @@
-package haskell.reduction;
+package com.interpreter.haskell.reduction;
 
-import haskell.ast.*;
+import com.interpreter.haskell.ast.*;
 
 /**
  * Helper class which offers functionality to transform applications of the predefined match function.

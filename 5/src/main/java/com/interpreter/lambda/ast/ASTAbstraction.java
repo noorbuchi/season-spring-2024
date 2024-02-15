@@ -1,4 +1,4 @@
-package lambda.ast;
+package com.interpreter.lambda.ast;
 
 import java.util.*;
 

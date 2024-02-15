@@ -1,6 +1,8 @@
-package haskell.parser;
+package com.interpreter.haskell.parser;
 
-import haskell.ast.*;
+import com.interpreter.haskell.ast.*;
+import com.interpreter.haskell.ast.ComplexHaskell;
+import com.interpreter.haskell.ast.ComplexHaskellVisitor;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.ATNConfigSet;
 import org.antlr.v4.runtime.dfa.DFA;

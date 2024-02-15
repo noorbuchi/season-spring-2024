@@ -1,9 +1,9 @@
-package lambda.type;
+package com.interpreter.lambda.type;
 
-import haskell.ast.ASTDataDecl;
-import haskell.ast.ASTType;
-import lambda.ast.ASTConstant;
-import lambda.ast.ASTTerm;
+import com.interpreter.haskell.ast.ASTDataDecl;
+import com.interpreter.haskell.ast.ASTType;
+import com.interpreter.lambda.ast.ASTConstant;
+import com.interpreter.lambda.ast.ASTTerm;
 
 /**
  * This exception is thrown when an expression is not correctly typed.

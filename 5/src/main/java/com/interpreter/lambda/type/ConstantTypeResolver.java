@@ -1,10 +1,10 @@
-package lambda.type;
+package com.interpreter.lambda.type;
 
-import haskell.ast.*;
-import lambda.ast.ASTConstant;
-import lambda.reduction.delta.ConstructorReduction;
-import lambda.reduction.delta.PredefinedFunction;
-import lambda.reduction.delta.TupleReduction;
+import com.interpreter.haskell.ast.*;
+import com.interpreter.lambda.ast.ASTConstant;
+import com.interpreter.lambda.reduction.delta.ConstructorReduction;
+import com.interpreter.lambda.reduction.delta.PredefinedFunction;
+import com.interpreter.lambda.reduction.delta.TupleReduction;
 
 import java.util.List;
 import java.util.Optional;

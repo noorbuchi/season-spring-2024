@@ -1,4 +1,4 @@
-package haskell.ast;
+package com.interpreter.haskell.ast;
 
 import java.util.*;
 import java.util.stream.Collectors;

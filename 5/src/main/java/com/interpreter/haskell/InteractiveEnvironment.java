@@ -1,11 +1,11 @@
-package haskell;
+package com.interpreter.haskell;
 
-import haskell.ast.ASTDecl;
-import haskell.ast.ASTExpression;
-import haskell.ast.ASTProgram;
-import haskell.parser.ASTGenerator;
-import lambda.ast.ASTTerm;
-import lambda.type.TypeException;
+import com.interpreter.haskell.ast.ASTDecl;
+import com.interpreter.haskell.ast.ASTExpression;
+import com.interpreter.haskell.ast.ASTProgram;
+import com.interpreter.haskell.parser.ASTGenerator;
+import com.interpreter.lambda.ast.ASTTerm;
+import com.interpreter.lambda.type.TypeException;
 import org.antlr.v4.runtime.ANTLRFileStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CharStream;

@@ -1,9 +1,9 @@
-package lambda.type;
+package com.interpreter.lambda.type;
 
-import haskell.ast.*;
-import haskell.ast.ASTVariable;
-import lambda.ast.*;
-import lambda.ast.ASTApplication;
+import com.interpreter.haskell.ast.*;
+import com.interpreter.haskell.ast.ASTVariable;
+import com.interpreter.lambda.ast.*;
+import com.interpreter.lambda.ast.ASTApplication;
 
 import java.util.*;
 
@@ -79,11 +79,11 @@ public class TypeChecker implements LambdaVisitor<Optional<ASTType>> {
         this.error = Optional.empty();
 
         // make sure our fresh variables do not conflict with any variables in the term
-        Set<lambda.ast.ASTVariable> vars = term.getFreeVars();
+        Set<com.interpreter.lambda.ast.ASTVariable> vars = term.getFreeVars();
 
         // all our fresh variables are simply called "b_i", so we need to determine the smallest i which is not used yet
         freshVarIndex = 0;
-        for(lambda.ast.ASTVariable var : vars) {
+        for(com.interpreter.lambda.ast.ASTVariable var : vars) {
             String varName = var.getName();
             if (varName.length() >= 2 && varName.charAt(0) == 'b') {
 
@@ -104,7 +104,7 @@ public class TypeChecker implements LambdaVisitor<Optional<ASTType>> {
     public Optional<ASTType> visit(ASTAbstraction node) {
         // we replace the abstraction variable with a fresh variable
         ASTVariable argument = getFreshVariable();
-        lambda.ast.ASTVariable freshLambdaVar = new lambda.ast.ASTVariable(argument.getName());
+        com.interpreter.lambda.ast.ASTVariable freshLambdaVar = new com.interpreter.lambda.ast.ASTVariable(argument.getName());
         updateAssumption(new ASTVariable(node.getInput().getName()), argument);
 
         // we substitute the abstraction variable with the fresh variable in the lambda term as well
@@ -166,7 +166,7 @@ public class TypeChecker implements LambdaVisitor<Optional<ASTType>> {
     }
 
     @Override
-    public Optional<ASTType> visit(lambda.ast.ASTVariable node) {
+    public Optional<ASTType> visit(com.interpreter.lambda.ast.ASTVariable node) {
         ASTVariable var = new ASTVariable(node.getName());
 
         // look up if this variable already has a type assumption

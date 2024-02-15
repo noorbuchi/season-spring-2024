@@ -1,12 +1,12 @@
-package lambda.reduction.delta;
+package com.interpreter.lambda.reduction.delta;
 
-import haskell.ast.ASTFuncType;
-import haskell.ast.ASTTupleType;
-import haskell.ast.ASTType;
-import haskell.ast.ASTVariable;
-import lambda.ast.ASTConstant;
-import lambda.ast.ASTTerm;
-import lambda.type.PredefinedType;
+import com.interpreter.haskell.ast.ASTFuncType;
+import com.interpreter.haskell.ast.ASTTupleType;
+import com.interpreter.haskell.ast.ASTType;
+import com.interpreter.haskell.ast.ASTVariable;
+import com.interpreter.lambda.ast.ASTConstant;
+import com.interpreter.lambda.ast.ASTTerm;
+import com.interpreter.lambda.type.PredefinedType;
 
 import java.util.ArrayList;
 import java.util.List;

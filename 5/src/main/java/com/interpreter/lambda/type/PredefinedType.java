@@ -1,8 +1,8 @@
-package lambda.type;
+package com.interpreter.lambda.type;
 
-import haskell.ast.ASTTyConstr;
-import haskell.ast.ASTType;
-import haskell.ast.ASTTypeConstr;
+import com.interpreter.haskell.ast.ASTTyConstr;
+import com.interpreter.haskell.ast.ASTType;
+import com.interpreter.haskell.ast.ASTTypeConstr;
 
 /**
  * A list of predefined types.

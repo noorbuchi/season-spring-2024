@@ -1,6 +1,6 @@
-package haskell.reduction;
+package com.interpreter.haskell.reduction;
 
-import haskell.ast.ASTExpression;
+import com.interpreter.haskell.ast.ASTExpression;
 
 import java.util.*;
 

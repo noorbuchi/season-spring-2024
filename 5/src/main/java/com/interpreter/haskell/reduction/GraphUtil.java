@@ -1,4 +1,4 @@
-package haskell.reduction;
+package com.interpreter.haskell.reduction;
 
 import java.util.*;
 

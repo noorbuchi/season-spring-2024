@@ -1,6 +1,6 @@
-package lambda.reduction.delta;
+package com.interpreter.lambda.reduction.delta;
 
-import lambda.ast.*;
+import com.interpreter.lambda.ast.*;
 
 import java.util.List;
 import java.util.Optional;

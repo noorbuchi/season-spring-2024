@@ -1,7 +1,7 @@
-package lambda.reduction.delta;
+package com.interpreter.lambda.reduction.delta;
 
-import haskell.ast.*;
-import lambda.type.PredefinedType;
+import com.interpreter.haskell.ast.*;
+import com.interpreter.lambda.type.PredefinedType;
 
 /**
  * Enum of all predefined functions. (except for isa_, argof_, and sel_ functions)

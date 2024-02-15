@@ -1,13 +1,13 @@
-package haskell.reduction;
+package com.interpreter.haskell.reduction;
 
-import haskell.ast.*;
-import lambda.ast.ASTAbstraction;
-import lambda.ast.ASTConstant;
-import lambda.ast.ASTTerm;
-import lambda.reduction.WHNOReducer;
-import lambda.reduction.delta.ConstructorReduction;
-import lambda.reduction.delta.PredefinedFunction;
-import lambda.reduction.delta.TupleReduction;
+import com.interpreter.haskell.ast.*;
+import com.interpreter.lambda.ast.ASTAbstraction;
+import com.interpreter.lambda.ast.ASTConstant;
+import com.interpreter.lambda.ast.ASTTerm;
+import com.interpreter.lambda.reduction.WHNOReducer;
+import com.interpreter.lambda.reduction.delta.ConstructorReduction;
+import com.interpreter.lambda.reduction.delta.PredefinedFunction;
+import com.interpreter.lambda.reduction.delta.TupleReduction;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +25,7 @@ public class SimpleToLambdaReducer implements ComplexHaskellVisitor<ASTTerm> {
         // (a b c...) => (...((a b) c) ...)
         ASTTerm lambdaTerm = node.getExps().get(0).accept(this);
         for (int i = 1; i < node.getExps().size(); i++) {
-            lambdaTerm = new lambda.ast.ASTApplication(lambdaTerm, node.getExps().get(i).accept(this));
+            lambdaTerm = new com.interpreter.lambda.ast.ASTApplication(lambdaTerm, node.getExps().get(i).accept(this));
         }
 
         return lambdaTerm;
@@ -40,11 +40,11 @@ public class SimpleToLambdaReducer implements ComplexHaskellVisitor<ASTTerm> {
     @Override
     public ASTTerm visit(ASTBranch node) {
         // if a then b else c => (((if cond) a) b)
-        lambda.ast.ASTTerm result = new lambda.ast.ASTApplication(
-                new lambda.ast.ASTConstant(PredefinedFunction.IF),
+        com.interpreter.lambda.ast.ASTTerm result = new com.interpreter.lambda.ast.ASTApplication(
+                new com.interpreter.lambda.ast.ASTConstant(PredefinedFunction.IF),
                 node.getCondition().accept(this));
-        result = new lambda.ast.ASTApplication(result, node.getIfBranch().accept(this));
-        result = new lambda.ast.ASTApplication(result, node.getElseBranch().accept(this));
+        result = new com.interpreter.lambda.ast.ASTApplication(result, node.getIfBranch().accept(this));
+        result = new com.interpreter.lambda.ast.ASTApplication(result, node.getElseBranch().accept(this));
         return result;
     }
 
@@ -87,9 +87,9 @@ public class SimpleToLambdaReducer implements ComplexHaskellVisitor<ASTTerm> {
             return terms.get(0);
         }
         else {
-            ASTTerm result = new lambda.ast.ASTConstant(new TupleReduction.TupleConstant(n));
+            ASTTerm result = new com.interpreter.lambda.ast.ASTConstant(new TupleReduction.TupleConstant(n));
             for (ASTTerm t : terms) {
-                result = new lambda.ast.ASTApplication(result,t);
+                result = new com.interpreter.lambda.ast.ASTApplication(result,t);
             }
             return result;
         }
@@ -126,7 +126,7 @@ public class SimpleToLambdaReducer implements ComplexHaskellVisitor<ASTTerm> {
             if (pat instanceof ASTVariable) {
                 ASTVariable var = (ASTVariable) pat;
 
-                return new ASTAbstraction((lambda.ast.ASTVariable) var.accept(this), node.getExp().accept(this));
+                return new ASTAbstraction((com.interpreter.lambda.ast.ASTVariable) var.accept(this), node.getExp().accept(this));
             }
             else {
                 throw new RuntimeException("Complex to Simple reduction is incomplete: Lambdas must map a variable.");
@@ -156,9 +156,9 @@ public class SimpleToLambdaReducer implements ComplexHaskellVisitor<ASTTerm> {
 
         // let var = exp in target => exp[var / (fix \var.exp)]
         ASTTerm basis = node.getExp().accept(this);
-        lambda.ast.ASTVariable variable = (lambda.ast.ASTVariable) pat.accept(this);
-        ASTTerm func = new lambda.ast.ASTAbstraction(variable, patDecl.getExp().accept(this));
-        ASTTerm replacement = new lambda.ast.ASTApplication(new lambda.ast.ASTConstant(PredefinedFunction.FIX), func);
+        com.interpreter.lambda.ast.ASTVariable variable = (com.interpreter.lambda.ast.ASTVariable) pat.accept(this);
+        ASTTerm func = new com.interpreter.lambda.ast.ASTAbstraction(variable, patDecl.getExp().accept(this));
+        ASTTerm replacement = new com.interpreter.lambda.ast.ASTApplication(new com.interpreter.lambda.ast.ASTConstant(PredefinedFunction.FIX), func);
         return basis.substitute(variable, replacement);
     }
 
@@ -197,7 +197,7 @@ public class SimpleToLambdaReducer implements ComplexHaskellVisitor<ASTTerm> {
             return constant.get();
         }
         else {
-            return new lambda.ast.ASTVariable(node.getName());
+            return new com.interpreter.lambda.ast.ASTVariable(node.getName());
         }
     }
 

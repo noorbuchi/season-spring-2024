@@ -1,8 +1,8 @@
-package haskell.reduction;
+package com.interpreter.haskell.reduction;
 
-import haskell.ast.ASTExpression;
-import haskell.ast.ASTLambda;
-import haskell.ast.ASTPattern;
+import com.interpreter.haskell.ast.ASTExpression;
+import com.interpreter.haskell.ast.ASTLambda;
+import com.interpreter.haskell.ast.ASTPattern;
 
 import java.util.List;
 

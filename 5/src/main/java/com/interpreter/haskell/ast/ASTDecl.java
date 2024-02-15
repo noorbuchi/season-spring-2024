@@ -1,4 +1,4 @@
-package haskell.ast;
+package com.interpreter.haskell.ast;
 
 /**
  * Represents a variable declaration.
