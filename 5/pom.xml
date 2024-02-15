@@ -34,11 +34,17 @@
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
 			<version>4.13.1</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4</artifactId>
 			<version>4.13.1</version>
+		</dependency>
+		<dependency>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr4-maven-plugin</artifactId>
+				<version>4.13.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -60,6 +66,26 @@
 			</resource>
 		</resources>
 		<plugins>
+			<plugin>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr4-maven-plugin</artifactId>
+				<version>4.13.1</version>
+				<executions>
+					<execution>
+						<phase>
+							compile
+						</phase>
+						<configuration>
+							<sourceDirectory>${session.executionRootDirectory}/src/main/java/com/interpreter/haskell/parser</sourceDirectory>
+						</configuration>
+						<goals>
+							<goal>
+								antlr4
+							</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>

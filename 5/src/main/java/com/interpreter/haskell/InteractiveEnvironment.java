@@ -40,14 +40,11 @@ public class InteractiveEnvironment {
     /**
      * Starts the interactive environment.
      */
-    public void start() {
+    public void start(String fileName) {
         boolean endProgram = false;
-
+        loadProgramFromFile(fileName);
         while(!endProgram) {
-            // read a line of text
-            System.out.print("> ");
             String line;
-
             try {
                 line = readLine();
                 endProgram = handleLine(line);
@@ -179,6 +176,6 @@ public class InteractiveEnvironment {
 
     public static void main(String[] args) {
         InteractiveEnvironment ie = new InteractiveEnvironment();
-        ie.start();
+        ie.start(args[0]);
     }
 }

@@ -1,4 +1,4 @@
-package com.golf.four;
+package com.golf.five;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,12 +15,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import org.projog.api.Projog;
-import org.projog.api.QueryResult;
-import org.projog.api.QueryStatement;
-import org.projog.core.term.Atom;
-
-import org.projog.tools.ProjogConsole;
+import com.interpreter.haskell.InteractiveEnvironment;
 
 class BaseTests {
 
@@ -53,24 +48,7 @@ class BaseTests {
   @MethodSource
   @ParameterizedTest
   void testProgramOutput(String[] args) throws Exception {
-    //ProjogConsole.main(args);
-    Projog projog = new Projog();
-    projog.consultFile(
-      Paths.get(
-        BaseTests.class.getClassLoader().getResource("main.pl").toURI()
-      ).toFile()
-    );
-    QueryStatement query = projog.createStatement("friend(X, mary).");
-    QueryResult result = query.executeQuery();
-    String output = "";
-    while(result.next()){
-      System.out.println(result);
-      output += result.getTerm("X");
-    }
-    assertEquals(
-      "annajohnmary",
-      output
-    );
+    // Pass me!
   }
 
   @AfterAll
