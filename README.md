@@ -15,9 +15,11 @@ Your task is to determine if an `ISBN-10` is valid or not. Here're the rules:
 
 From a source more authoritative than me:
 
-> To verify an ISBN, calculate 10 times the first digit, plus 9 times the second digit, plus 8 times the third digit and so on until we add 1 time the last digit. If the final number leaves no remainder when divided by 11, the code is a valid ISBN.
+> To verify an ISBN, calculate 10 times the first digit, plus 9 times the second digit, plus 8 times the third digit and so on until we add 1 times the last digi>
 
-THe code representing this is already written. But, can you make it shorter?
+Note: the final check digit will either be one of the set `0`-`9` or an `X`.
+
+The code representing this is already written. But, can you make it shorter?
 
 ## Tips
 
