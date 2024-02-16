@@ -1,47 +1,36 @@
 ![Green square on deep blue background with words "Allegheny Code Golf Association" in foreground, white](https://github.com/allegheny-college-cmpsc-201-spring-2024/golf/assets/1552764/d3ee6a91-74c9-482b-84eb-ec9a2e8dee05)
 
-[![Language: Prolog](https://img.shields.io/badge/Language-Prolog-red.svg)](https://www.infoq.com/presentations/prolog-introduction/)
-![Par: 772 bytes](https://img.shields.io/badge/Par-772_bytes-green)
+![Language: Java](https://img.shields.io/badge/Language-Prolog-brown.svg)]
+![Par: 772 bytes](https://img.shields.io/badge/Par-1057_bytes-green)
 
-# ⛳ Code Golf: Hole 4 - Why Can't Peter Be Friends?
+# ⛳ Code Golf: Hole 5 - ISBN or Nah
 
-Peter is known as a loner. Why? Because they've got so many _enemies_! However, this isn't so much about enemies; it's more
-about _friends_. As the saying goes: the enemy of my enemy is, well, at least not my enemy (i.e., my friend). Here, there
-are _3_ people who are friends: namely, because they're all Peter's enemy:
+Books are great. I mean, really great. Don't take it from me: ISBN true (always; that's a good joke). For a very long time, books were serialized using a `10`-digit number referred to as an `ISBN-10` which constituted part of the barcode for a given book. Each is unique. However, we need to know if someone's trying to scam the system.
 
-* Anna
-* John
-* Mary
+Your task is to determine if an `ISBN-10` is valid or not. Here're the rules:
 
-(The response of the program to the test should really be, `annajohnmary`.)
+* `ISBN-10` numbers are `10` digits
+  * `9` of them constitute a number
+  * `1` (the last) is a "check digit"
 
-To get up to speed on this, you might review the wonderful Prolog primer: "I Don't Know Prolog, and So Can You."
+From a source more authoritative than me:
 
-* [I Don't Know Prolog, and So Can You](https://www.infoq.com/presentations/prolog-introduction/)
+> To verify an ISBN, calculate 10 times the first digit, plus 9 times the second digit, plus 8 times the third digit and so on until we add 1 time the last digit. If the final number leaves no remainder when divided by 11, the code is a valid ISBN.
 
-This repository uses the Apache Maven build platform to compile the entire interpreter (provided in the `3/src` folder).
-The challenge must be completed in the `Prolog` file located at:
-
-* [4/src/test/resources/main.pl](4/src/test/resources/main.pl)
-
-Finally, a _big big big thanks_ to GitHub user `s-webber` for creating the `projog` project to parse Prolog in Java. You 
-can check out more at [projog's GitHub](https://github.com/s-webber/projog).
+THe code representing this is already written. But, can you make it shorter?
 
 ## Tips
 
 Tips for golfing are available for Prolog language and as general pointers:
 
-* [Tips for Golfing in Prolog](https://code.golf/wiki/langs/prolog)
+* [Tips for Golfing in Java](https://codegolf.stackexchange.com/questions/6671/tips-for-golfing-in-java)
 * [General tips for golfing with any language](https://codegolf.stackexchange.com/questions/5285/tips-for-golfing-in-all-languages)
 
 ## Requirements
 
-* this challenge must be completed using the `Prolog` language
-* the program must run and output the following string:
-```
-annajohnmary
-```
-* the program must be written in the `4/src/test/resources/main.pl` file
+* this challenge must be completed using the `Java` language
+* the program must run and correctly check the `5` `ISBN-10` numbers in `5/test/resources/test.isbns`
+* the program must be written in the `5/src/main/java/com/golf/five/Main.java` file
 
 ## Infrastructure
 

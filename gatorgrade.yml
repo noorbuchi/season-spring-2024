@@ -1,6 +1,6 @@
 setup: |
-  echo "🏌️    [Score] $(wc -c 4/src/test/resources/main.pl | awk '{print $1}') bytes"
+  echo "🏌️    [Score] $(wc -c 5/src/main/java/com/golf/five/Main.java | awk '{print $1}') bytes"
 ---
-- description: \[Round 4] Executes successfully
+- description: \[Round 5] Executes successfully
   category: Round 4
-  command: mvn clean install compile test -U -f '4/pom.xml'
+  command: mvn clean install compile test -U -f '5/pom.xml'

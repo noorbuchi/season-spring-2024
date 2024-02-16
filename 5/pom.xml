@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.projog</groupId>
+	<groupId>com.interpreter.haskell</groupId>
 	<artifactId>five</artifactId>
 	<version>0.5.0</version>
 	<name>HoleFive</name>
@@ -26,26 +26,6 @@
 	</dependencyManagement>
 	<dependencies>
 		<dependency>
-			<groupId>org.projog</groupId>
-			<artifactId>projog-clp</artifactId>
-			<version>0.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.antlr</groupId>
-			<artifactId>antlr4-runtime</artifactId>
-			<version>4.13.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.antlr</groupId>
-			<artifactId>antlr4</artifactId>
-			<version>4.13.1</version>
-		</dependency>
-		<dependency>
-            <groupId>org.antlr</groupId>
-            <artifactId>antlr4-maven-plugin</artifactId>
-            <version>4.13.1</version>
-		</dependency>
-		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
@@ -60,33 +40,14 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.antlr</groupId>
-				<artifactId>antlr4-maven-plugin</artifactId>
-				<version>4.13.1</version>
-				<executions>
-					<execution>
-						<configuration>
-							<sourceDirectory>${session.executionRootDirectory}/src/main/java/com/interpreter/haskell/parser</sourceDirectory>
-						    <outputDirectory>${session.executionRootDirectory}/src/main/java/com/interpreter/haskell/parser</outputDirectory>
-                            <visitor>true</visitor>
-                        </configuration>
-						<goals>
-							<goal>
-								antlr4
-							</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.4.0</version>
 				<configuration>
 					<executable>java</executable>
-					<mainClass>com.interpreter.haskell.InteractiveEnvironment</mainClass>
+					<mainClass>com.golf.five.Main</mainClass>
 					<arguments>
-						<argument>${session.executionRootDirectory}/src/test/resources/main.hs</argument>
+						<argument>007462542X</argument>
 					</arguments>
 				</configuration>
 			</plugin>
@@ -103,7 +64,7 @@
 				</dependencies>
 				<configuration>
 					<additionalClasspathElements>
-						<additionalClasspathElement>${session.executionRootDirectory}/src/test/java/com/golf/three/*Tests.java</additionalClasspathElement>
+						<additionalClasspathElement>${session.executionRootDirectory}/src/test/java/com/golf/five/*Tests.java</additionalClasspathElement>
 					</additionalClasspathElements>
 				</configuration>
 			</plugin>
