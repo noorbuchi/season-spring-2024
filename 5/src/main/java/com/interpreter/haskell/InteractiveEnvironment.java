@@ -43,15 +43,6 @@ public class InteractiveEnvironment {
     public void start(String fileName) {
         boolean endProgram = false;
         loadProgramFromFile(fileName);
-        while(!endProgram) {
-            String line;
-            try {
-                line = readLine();
-                endProgram = handleLine(line);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     /**
@@ -111,8 +102,9 @@ public class InteractiveEnvironment {
             System.out.println("Error: Could not load file.");
             return;
         }
-
+        System.out.println(fileStream);
         Optional<ASTProgram> program = astGenerator.parseProgram(fileStream);
+
         if (program.isPresent()) {
             try {
                 interpreter.addProgram(program.get());

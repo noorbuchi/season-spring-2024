@@ -1,6 +1,6 @@
 // Generated from ComplexHaskell.g4 by ANTLR 4.13.1
 
-  package com.interpreter.haskell.parser;
+package com.interpreter.haskell.parser;
 
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;

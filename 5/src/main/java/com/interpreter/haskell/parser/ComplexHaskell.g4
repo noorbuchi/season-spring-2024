@@ -5,7 +5,7 @@ options {
 }
 
 @header {
-  package com.interpreter.haskell.parser;
+package com.interpreter.haskell.parser;
 }
 
 program : (decl '\n'+)*;
