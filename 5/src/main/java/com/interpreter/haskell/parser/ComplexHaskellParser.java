@@ -1,4 +1,7 @@
 // Generated from ComplexHaskell.g4 by ANTLR 4.13.1
+
+  package com.interpreter.haskell.parser;
+
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -124,6 +127,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitProgram(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitProgram(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -197,6 +205,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitDecl(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitDecl(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DeclContext decl() throws RecognitionException {
@@ -259,6 +272,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitDecls(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitDecls(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -345,6 +363,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitFundecl(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitFundecl(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FundeclContext fundecl() throws RecognitionException {
@@ -407,6 +430,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitPatdecl(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitPatdecl(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PatdeclContext patdecl() throws RecognitionException {
@@ -462,6 +490,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitDatadecl(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitDatadecl(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -545,6 +578,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitConstrdecl(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitConstrdecl(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -633,6 +671,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitExp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitExp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -781,6 +824,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitPat(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitPat(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PatContext pat() throws RecognitionException {
@@ -892,6 +940,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitType(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TypeContext type() throws RecognitionException {
@@ -962,6 +1015,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitExpTuple(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitExpTuple(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExpTupleContext expTuple() throws RecognitionException {
@@ -1025,6 +1083,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitPatTuple(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitPatTuple(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1090,6 +1153,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitApplication(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitApplication(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ApplicationContext application() throws RecognitionException {
@@ -1152,6 +1220,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitBranch(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitBranch(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BranchContext branch() throws RecognitionException {
@@ -1204,6 +1277,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitLet(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitLet(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1259,6 +1337,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitCases(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitCases(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1341,6 +1424,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitLambda(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitLambda(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LambdaContext lambda() throws RecognitionException {
@@ -1405,6 +1493,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitConstruct(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitConstruct(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1471,6 +1564,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitTypeconstr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitTypeconstr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TypeconstrContext typeconstr() throws RecognitionException {
@@ -1533,6 +1631,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitFunctype(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitFunctype(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FunctypeContext functype() throws RecognitionException {
@@ -1583,6 +1686,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitTupletype(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitTupletype(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1651,6 +1759,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitVar(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitVar(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final VarContext var() throws RecognitionException {
@@ -1688,6 +1801,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitTyconstr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitTyconstr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1727,6 +1845,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitInteger(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitInteger(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IntegerContext integer() throws RecognitionException {
@@ -1763,6 +1886,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitBool(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitBool(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1811,6 +1939,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitFloating(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitFloating(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final FloatingContext floating() throws RecognitionException {
@@ -1849,6 +1982,11 @@ public class ComplexHaskellParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitCharacter(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitCharacter(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CharacterContext character() throws RecognitionException {
@@ -1886,6 +2024,11 @@ public class ComplexHaskellParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof ComplexHaskellListener ) ((ComplexHaskellListener)listener).exitJoker(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ComplexHaskellVisitor ) return ((ComplexHaskellVisitor<? extends T>)visitor).visitJoker(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

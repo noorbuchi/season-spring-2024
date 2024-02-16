@@ -34,7 +34,6 @@
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
 			<version>4.13.1</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
@@ -42,9 +41,9 @@
 			<version>4.13.1</version>
 		</dependency>
 		<dependency>
-				<groupId>org.antlr</groupId>
-				<artifactId>antlr4-maven-plugin</artifactId>
-				<version>4.13.1</version>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-maven-plugin</artifactId>
+            <version>4.13.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -59,12 +58,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.antlr</groupId>
@@ -72,12 +65,11 @@
 				<version>4.13.1</version>
 				<executions>
 					<execution>
-						<phase>
-							compile
-						</phase>
 						<configuration>
 							<sourceDirectory>${session.executionRootDirectory}/src/main/java/com/interpreter/haskell/parser</sourceDirectory>
-						</configuration>
+						    <outputDirectory>${session.executionRootDirectory}/src/main/java/com/interpreter/haskell/parser</outputDirectory>
+                            <visitor>true</visitor>
+                        </configuration>
 						<goals>
 							<goal>
 								antlr4
@@ -94,11 +86,8 @@
 					<executable>java</executable>
 					<mainClass>com.interpreter.haskell.InteractiveEnvironment</mainClass>
 					<arguments>
-						<argument>${session.executionRootDirectory}/src/test/resources/main.pl</argument>
+						<argument>${session.executionRootDirectory}/src/test/resources/main.hs</argument>
 					</arguments>
-					<additionalClasspathElements>
-						<additionalClasspathElement>${session.executionRootDirectory}/src/target/classes/projog-bootstrap.pl</additionalClasspathElement>
-					</additionalClasspathElements>
 				</configuration>
 			</plugin>
 			<plugin>

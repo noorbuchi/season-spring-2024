@@ -4,6 +4,10 @@ options {
   language = Java;
 }
 
+@header {
+  package com.interpreter.haskell.parser;
+}
+
 program : (decl '\n'+)*;
 decl : fundecl | patdecl | datadecl;
 decls : '{' decl (';' decl)* '}' | '{' '}';
