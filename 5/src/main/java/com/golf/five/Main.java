@@ -1,1 +1,1 @@
-package com.golf.five;class Main{static void main(String[]a){int s=0;int c=0;for(int i:a[0].toCharArray()){if(i==88&&c==9){i=58;}else if(i>57){c=11;}s+=(i-48)*(10-c);c++;}System.out.println(c==10&&s%11==0);}}
+package com.golf.five;class Main{static void main(String[]a){int s=0,c=0;for(int i:a[0].toCharArray()){if(i==88&c==9){i=58;}else if(i>57){c=11;}s+=(i-48)*(10-c);c++;}System.out.println(c==10&s%11==0);}}
