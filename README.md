@@ -28,6 +28,10 @@ Take advantage of the [examples](https://github.com/munificent/jasic/tree/master
 the `README` to the interpreter repository (linked below). These will arm you with _all_ of the resources you need. There are so
 few instructions in the language that the introductory comment in the interpreter shows you _every one of them_.
 
+> Note: this week is a bit different in that _the par program is not provided for you_. However, the par score `282` represents
+> the most abstruse way the commissioner could think of doing this in the language. It's your job to not only figure out _how this
+> program should be written_: you've got to winnow bytes from your creation until you've got it to the smallest state possible.
+
 ## Tips
 
 Tips for golfing are available for Prolog language and as general pointers:
