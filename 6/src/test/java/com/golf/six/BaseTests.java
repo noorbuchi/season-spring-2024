@@ -1,4 +1,4 @@
-package com.golf.five;
+package com.golf.six;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -21,6 +21,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import com.interpreter.jasic.Jasic;
+
 class BaseTests {
 
   /*
@@ -41,41 +43,31 @@ class BaseTests {
   }
 
   static Stream<Arguments> testProgramOutput() throws Exception {
-    URL resource = BaseTests.class.getClassLoader().getResource("test.isbns");
+    URL resource = BaseTests.class.getClassLoader().getResource("test.jas");
     File file = Paths.get(resource.toURI()).toFile();
     String absPath = file.getAbsolutePath();
-    List<String> isbns = new ArrayList<String>();
-    BufferedReader reader = new BufferedReader(new FileReader(absPath));
-    String line = reader.readLine();
-    while(line != null){
-      isbns.add(line);
-      line = reader.readLine();
-    }
-    reader.close();
     return Stream.of(
-      Arguments.of((Object) isbns.toArray(new String[0]))
+      Arguments.of((Object) new String[]{absPath})
     );
   }
 
   @MethodSource
   @ParameterizedTest
   void testProgramOutput(String[] args) throws Exception {
-    String[] result = {};
-    List<String> results = new ArrayList<String>();
-    String[] outcomes = {"true", "true", "false", "false", "true"};
-    for(int i = 0; i < args.length; i++){
-      String[] arg = {args[i]};
-      Main.main(arg);
-      result = outContent.toString().strip().split(" ");
-    }
-    results.add(result[result.length - 1]);
-    String[] outputs = results.get(0).split("\n");
-    for(int i = 0; i < outputs.length; i++){
-      assertEquals(
-        outcomes[i],
-        outputs[i]
-      );
-    }
+    Jasic.main(args);
+    assertEquals(
+        "**********\n" +
+"**********\n" +
+"**********\n" +
+"**********\n" +
+"**********\n" +
+"**********\n" +
+"**********\n" +
+"**********\n" +
+"**********\n" +
+"**********\n",
+        outContent.toString()
+    );
   }
 
   @AfterAll

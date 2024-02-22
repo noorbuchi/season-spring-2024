@@ -1,38 +1,45 @@
 ![Green square on deep blue background with words "Allegheny Code Golf Association" in foreground, white](https://github.com/allegheny-college-cmpsc-201-spring-2024/golf/assets/1552764/d3ee6a91-74c9-482b-84eb-ec9a2e8dee05)
 
-![Language: Java](https://img.shields.io/badge/Language-Prolog-brown.svg)]
-![Par: 772 bytes](https://img.shields.io/badge/Par-1057_bytes-green)
+![Language: JASIC](https://img.shields.io/badge/Language-JASIC-black.svg)]
+![Par: 282 bytes](https://img.shields.io/badge/Par-282_bytes-green)
 
-# ⛳ Code Golf: Hole 5 - ISBN or Nah
+# ⛳ Code Golf: Hole 6 - Back to BASIC(s) (er...JASIC(s)?)
 
-Books are great. I mean, really great. Don't take it from me: ISBN true (always; that's a good joke). For a very long time, books were serialized using a `10`-digit number referred to as an `ISBN-10` which constituted part of the barcode for a given book. Each is unique. However, we need to know if someone's trying to scam the system.
+This one's a blast from the past: a re-implementation of the original BASIC programming language using a Java-based interpreter
+written by none other than our textbook's author, [Bob Nystrom](https://github.com/munificent/)! And, this one is a classic
+introduction to programming test. Your goal is to print the following `10`x`10` grid of stars:
+```
+**********
+**********
+**********
+**********
+**********
+**********
+**********
+**********
+**********
+**********
+```
+However, you're using _a dialect_ of a larger language. Interestingly enough, _there are no `for` loops_ in this version of BASIC.
+This may tempt you to use only `print` statements to display your creation, but ther is a way to cut over `180` bytes from the par
+solution and another `100` from the `print`-statement-only version.
 
-Your task is to determine if an `ISBN-10` is valid or not. Here're the rules:
-
-* `ISBN-10` numbers are `10` digits
-  * `9` of them constitute a number
-  * `1` (the last) is a "check digit"
-
-From a source more authoritative than me:
-
-> To verify an ISBN, calculate 10 times the first digit, plus 9 times the second digit, plus 8 times the third digit and so on until we add 1 times the last digi>
-
-Note: the final check digit will either be one of the set `0`-`9` or an `X`.
-
-The code representing this is already written. But, can you make it shorter?
+Take advantage of the [examples](https://github.com/munificent/jasic/tree/master/sample) that the interpreter's author provides and
+the `README` to the interpreter repository (linked below). These will arm you with _all_ of the resources you need. There are so
+few instructions in the language that the introductory comment in the interpreter shows you _every one of them_.
 
 ## Tips
 
 Tips for golfing are available for Prolog language and as general pointers:
 
-* [Tips for Golfing in Java](https://codegolf.stackexchange.com/questions/6671/tips-for-golfing-in-java)
+* [JASIC Interpreter](https://github.com/munificent/jasic/blob/master/com/stuffwithstuff/Jasic.java)
 * [General tips for golfing with any language](https://codegolf.stackexchange.com/questions/5285/tips-for-golfing-in-all-languages)
 
 ## Requirements
 
-* this challenge must be completed using the `Java` language
-* the program must run and correctly check the `5` `ISBN-10` numbers in `5/test/resources/test.isbns`
-* the program must be written in the `5/src/main/java/com/golf/five/Main.java` file
+* this challenge must be completed using the `JASIC` dialect of the `BASIC` language (resource linked above)
+* the program must run and correctly print the `10`x`10` grid of `*` characters
+* the program must be written in the `6/src/test/resources/test.jas` file
 
 ## Infrastructure
 

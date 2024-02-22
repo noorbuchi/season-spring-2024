@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.interpreter.haskell</groupId>
-	<artifactId>five</artifactId>
-	<version>0.5.0</version>
-	<name>HoleFive</name>
+	<groupId>com.interpreter.JASIC</groupId>
+	<artifactId>six</artifactId>
+	<version>0.6.0</version>
+	<name>HoleSix</name>
 	<url>https://github.com/allegheny-college-cmpsc-201-spring-2024</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,9 +45,9 @@
 				<version>1.4.0</version>
 				<configuration>
 					<executable>java</executable>
-					<mainClass>com.golf.five.Main</mainClass>
+					<mainClass>com.interpreter.jasic.Jasic</mainClass>
 					<arguments>
-						<argument>007462542X</argument>
+						<argument>${session.executionRootDirectory}/src/test/resources/test.jas</argument>
 					</arguments>
 				</configuration>
 			</plugin>
@@ -64,7 +64,7 @@
 				</dependencies>
 				<configuration>
 					<additionalClasspathElements>
-						<additionalClasspathElement>${session.executionRootDirectory}/src/test/java/com/golf/five/*Tests.java</additionalClasspathElement>
+						<additionalClasspathElement>${session.executionRootDirectory}/src/test/java/com/golf/six/*Tests.java</additionalClasspathElement>
 					</additionalClasspathElements>
 				</configuration>
 			</plugin>
