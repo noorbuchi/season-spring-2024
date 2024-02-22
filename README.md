@@ -6,7 +6,7 @@
 # ⛳ Code Golf: Hole 6 - Back to BASIC(s) (er...JASIC(s)?)
 
 This one's a blast from the past: a re-implementation of the original BASIC programming language using a Java-based interpreter
-written by none other than our textbook's author, [Bob Nystrom](https://github.com/munificent/)! And, this one is a classic
+written by none other than the potentate of programming languages, [Bob Nystrom](https://github.com/munificent/)! And, this one is a classic
 introduction to programming test. Your goal is to print the following `10`x`10` grid of stars:
 ```
 **********
