@@ -1,1 +1,1 @@
-i=0x:print"**********"i=i+1if i<10then x end:
+					i=0x:print"**********"i=i+1if i<10then x
