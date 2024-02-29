@@ -310,6 +310,9 @@ class Interpreter implements Expr.Visitor<Object>,
         if (left instanceof String && right instanceof String) {
           return (String)left + (String)right;
         }
+        if (left instanceof String && right instanceof Double) {
+          return (String)left + String.valueOf( (double)right );
+        }
         throw new RuntimeError(expr.operator,
           "Operands must be two numbers or two strings.");
       case SLASH:

@@ -2,6 +2,8 @@ package com.interpreter.lox;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.nio.file.Files;
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -43,22 +45,18 @@ class BaseTests {
     );
   }
 
+  static String getFullProgramTestOutput() throws Exception {
+    URL resource = BaseTests.class.getClassLoader().getResource("test.out");
+    String file = Paths.get(resource.toURI()).toFile().getAbsolutePath();
+    return new String(Files.readAllBytes(Paths.get(file)));
+  }
+
   @MethodSource
   @ParameterizedTest
   void testProgramOutput(String[] args) throws Exception {
     Main.main(args);
     assertEquals(
-      "lox\n"+
-      "loxlox\n"+
-      "loxloxlox\n"+
-      "loxloxloxlox\n"+
-      "loxloxloxloxlox\n"+
-      "loxloxloxloxloxlox\n"+
-      "loxloxloxloxlox\n"+
-      "loxloxloxlox\n"+
-      "loxloxlox\n"+
-      "loxlox\n"+
-      "lox",
+      getFullProgramTestOutput().trim(),
       outContent.toString().strip()
     );
   }
