@@ -316,6 +316,13 @@ class Interpreter implements Expr.Visitor<Object>,
         checkNumberOperands(expr.operator, left, right);
         return (double)left / (double)right;
       case STAR:
+        if (left instanceof String && right instanceof Double) {
+          StringBuilder builder = new StringBuilder();
+          for(int i = 0; i<= (double)right; i++) {
+            builder.append((String)left);
+          }
+          return builder.toString();
+        }
         checkNumberOperands(expr.operator, left, right);
         return (double)left * (double)right;
       case BANG_EQUAL:
