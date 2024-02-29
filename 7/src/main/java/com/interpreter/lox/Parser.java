@@ -10,6 +10,7 @@ class Parser {
 
   private final List<Token> tokens;
   private int current = 0;
+  private int loopDepth = 0;
 
   Parser(List<Token> tokens) {
     this.tokens = tokens;
@@ -91,21 +92,26 @@ class Parser {
       increment = expression();
     }
     consume(RIGHT_PAREN, "Expect ')' after for clauses.");
-    Stmt body = statement();
-    if (increment != null) {
-      body = new Stmt.Block(
-        Arrays.asList(
-          body,
-          new Stmt.Expression(increment)
-        )
-      );
+    try {
+      loopDepth++;
+      Stmt body = statement();
+      if (increment != null) {
+       body = new Stmt.Block(
+         Arrays.asList(
+           body,
+           new Stmt.Expression(increment)
+         )
+       );
+      }
+      if (condition == null) condition = new Expr.Literal(true);
+      body = new Stmt.While(condition, body);
+      if (initializer != null) {
+        body = new Stmt.Block(Arrays.asList(initializer, body));
+      }
+      return body;
+    } finally {
+      loopDepth--;
     }
-    if (condition == null) condition = new Expr.Literal(true);
-    body = new Stmt.While(condition, body);
-    if (initializer != null) {
-      body = new Stmt.Block(Arrays.asList(initializer, body));
-    }
-    return body;
   }
 
   private Stmt ifStatement() {
@@ -154,14 +160,35 @@ class Parser {
     consume(LEFT_PAREN, "Expect '(' after 'while'.");
     Expr condition = expression();
     consume(RIGHT_PAREN, "Expect ')' after condition.");
-    Stmt body = statement();
-    return new Stmt.While(condition, body);
+    try {
+      loopDepth++;
+      Stmt body = statement();
+      return new Stmt.While(condition, body);
+    } finally {
+      loopDepth--;
+    }
   }
 
   private Stmt expressionStatement() {
     Expr expr = expression();
     consume(SEMICOLON, "Expect ';' after expression.");
     return new Stmt.Expression(expr);
+  }
+
+  private Stmt breakStatement() {
+    if (loopDepth == 0) {
+      error(previous(), "Break statement must be contained in loop.");
+    }
+    consume(SEMICOLON, "Expect ';' after statement.");
+    return new Stmt.Break();
+  }
+
+  private Stmt continueStatement() {
+    if (loopDepth == 0) {
+      error(previous(), "Continue statement must be contained in loop.");
+    }
+    consume(SEMICOLON, "Expect ';' after statement.");
+    return new Stmt.Continue();
   }
 
   private Stmt.Function function(String kind) {
@@ -225,14 +252,26 @@ class Parser {
   }
 
   private Expr and() {
-    Expr expr = equality();
+    Expr expr = conditional();
     while (match(AND)) {
       Token operator = previous();
-      Expr right = equality();
+      Expr right = conditional();
       expr = new Expr.Logical(expr, operator, right);
     }
     return expr;
   }
+
+  private Expr conditional() {
+    Expr expr = equality();
+    if (match(QUESTION)) {
+      Expr thenBranch = expression();
+      consume(COLON, "Expect ':' after then branch.");
+      Expr elseBranch = conditional();
+      expr = new Expr.Conditional(expr, thenBranch, elseBranch);
+    }
+    return expr;
+  }
+
   private Expr equality() {
     Expr expr = comparison();
     while(match(BANG_EQUAL, EQUAL_EQUAL)) {

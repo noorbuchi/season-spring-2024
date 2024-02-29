@@ -1,1 +1,0 @@
-fun c(o,d){if(d>0){print o;c(o+"lox",d-1);}print o;}c("",6);

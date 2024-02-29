@@ -16,6 +16,7 @@ abstract class Expr {
     R visitThisExpr(This expr);
     R visitUnaryExpr(Unary expr);
     R visitVariableExpr(Variable expr);
+    R visitConditionalExpr(Conditional expr);
   }
   static class Assign extends Expr {
     Assign(Token name, Expr value) {
@@ -101,6 +102,24 @@ abstract class Expr {
 
     final Object value;
   }
+
+  static class Conditional extends Expr {
+    Conditional(Expr expression, Expr thenBranch, Expr elseBranch) {
+      this.expression = expression;
+      this.thenBranch = thenBranch;
+      this.elseBranch = elseBranch;
+    }
+
+    @Override
+    <R> R accept(Visitor<R> visitor) {
+      return visitor.visitConditionalExpr(this);
+    }
+
+    final Expr expression;
+    final Expr thenBranch;
+    final Expr elseBranch;
+  }
+
   static class Logical extends Expr {
     Logical(Expr left, Token operator, Expr right) {
       this.left = left;

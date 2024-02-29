@@ -12,6 +12,9 @@ class Interpreter implements Expr.Visitor<Object>,
   private Environment environment = globals;
   private final Map<Expr, Integer> locals = new HashMap<>();
 
+  private static class BreakException extends RuntimeException {}
+  private static class ContinueException extends RuntimeException {}
+
   Interpreter() {
     globals.define("clock", new LoxCallable() {
 
@@ -229,8 +232,16 @@ class Interpreter implements Expr.Visitor<Object>,
 
   @Override
   public Void visitWhileStmt(Stmt.While stmt) {
-    while (isTruthy(evaluate(stmt.condition))) {
-      execute(stmt.body);
+    try{
+      while (isTruthy(evaluate(stmt.condition))) {
+        try {
+          execute(stmt.body);
+        } catch (ContinueException ex) {
+          //
+        }
+      }
+    } catch (BreakException ex) {
+      //
     }
     return null;
   }
@@ -314,6 +325,27 @@ class Interpreter implements Expr.Visitor<Object>,
     }
 
     return null;
+  }
+
+  @Override
+  public Object visitConditionalExpr(Expr.Conditional expr) {
+    Expr condition = expr.expression;
+    if(isTruthy(evaluate(condition))){
+        return evaluate(expr.thenBranch);
+    } else if (!isTruthy(evaluate(condition)) && expr.elseBranch != null) {
+        return evaluate(expr.elseBranch);
+    }
+    return null;
+  }
+
+  @Override
+  public Void visitBreakStmt(Stmt.Break stmt) {
+    throw new BreakException();
+  }
+
+  @Override
+  public Void visitContinueStmt(Stmt.Continue stmt) {
+    throw new ContinueException();
   }
 
   @Override
