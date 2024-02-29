@@ -8,6 +8,7 @@ fun modulus(number, divisor) {
 
 for (var i = 1; i <= 1000; i = i + 1) {
   var result = i;
+  result=modulus(i,3)==0?"Fizz":result;
   if (modulus(i, 3) == 0) {
     result = "Fizz";
   }

@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
  
   <groupId>com.interpreter.lox</groupId>
-  <artifactId>two</artifactId>
-  <version>0.2.0</version>
+  <artifactId>seven</artifactId>
+  <version>0.7.0</version>
  
-  <name>HoleTwo</name>
+  <name>HoleSeven</name>
   <url>https://github.com/allegheny-college-cmpsc-201-spring-2024</url>
  
   <properties>
