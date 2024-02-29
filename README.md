@@ -1,24 +1,12 @@
 ![Green square on deep blue background with words "Allegheny Code Golf Association" in foreground, white](https://github.com/allegheny-college-cmpsc-201-spring-2024/golf/assets/1552764/d3ee6a91-74c9-482b-84eb-ec9a2e8dee05)
 
-[![Language: Java](https://img.shields.io/badge/Language-Lox-red.svg)](https://www.craftinginterpreters.com/the-lox-language.html)
+[![Language: Lox](https://img.shields.io/badge/Language-Lox-purple.svg)](https://www.craftinginterpreters.com/the-lox-language.html)
 ![Par: 135 bytes](https://img.shields.io/badge/Par-218_bytes-green)
 
-# ⛳ Code Golf: Hole 2 - Gone Fishin' (Lox)
+# ⛳ Code Golf: Hole 8 - How Long (Does This Number Go On)?
 
-Something's fishy about this week's challenge...namely that your program must draw the following fish:
-```
-lox
-loxlox
-loxloxlox
-loxloxloxlox
-loxloxloxloxlox
-loxloxloxloxloxlox
-loxloxloxloxlox
-loxloxloxlox
-loxloxlox
-loxlox
-lox
-```
+
+
 As if that wasn't enough, you are required to complete this challenge in the `Lox` language, an interpreted language
 developed by Robert Nystrom in his book [_Crafting Interpreters_](https://www.craftinginterpreters.com/). For those
 not up on their breakfast-adjacent programming languages, the author provides a language overview at the link below:
@@ -28,26 +16,14 @@ not up on their breakfast-adjacent programming languages, the author provides a 
 This repository uses the Apache Maven build platform to compile the entire interpreter (provided in the `2/src` folder).
 The challenge must be completed in the `Lox` file located at:
 
-* [2/src/test/resources/main.lox](2/src/test/resources/main.lox)
+* [8/src/test/resources/main.lox](2/src/test/resources/main.lox)
 
 ## Requirements
 
 * this challenge must be completed using the `Lox` language
-* the program must run and output the following ASCII art fish:
-```
-lox
-loxlox
-loxloxlox
-loxloxloxlox
-loxloxloxloxlox
-loxloxloxloxloxlox
-loxloxloxloxlox
-loxloxloxlox
-loxloxlox
-loxlox
-lox
-```
-* the program must be written in the `2/src/test/resources/main.lox` file
+* this challenge must test itself using the for loop at the end of the code to check a range of numbers
+  * while the numbers can't be changed, the loop can/should be golfed
+* the program must be written in the `8/src/test/resources/main.lox` file
 
 ## Infrastructure
 

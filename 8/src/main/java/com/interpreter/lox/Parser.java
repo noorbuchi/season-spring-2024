@@ -69,6 +69,8 @@ class Parser {
     if (match(RETURN)) return returnStatement();
     if (match(WHILE)) return whileStatement();
     if (match(LEFT_BRACE)) return new Stmt.Block(block());
+    if (match(BREAK)) return breakStatement();
+    if (match(CONTINUE)) return continueStatement();
     return expressionStatement();
   }
 
