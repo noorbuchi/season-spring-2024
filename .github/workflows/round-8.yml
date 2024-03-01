@@ -1,8 +1,8 @@
-name: Round 1
+name: Round 8
 
 on:
   push:
-    branches: [round-1]
+    branches: [round-8]
 
 jobs: 
   Score:
@@ -27,20 +27,19 @@ jobs:
         sudo apt-get update
         sudo python -m pip install --upgrade pip
         sudo python -m pip install gatorgrade --ignore-installed PyYAML
-    - name: Score Round 1
+      if: always()
+    - name: Score Round 8
       id: score
       run: |
-        export PAR=135
-        export BYTE_SCORE=$(wc -c 1/src/main/java/com/golf/one/Main.java | awk '{print $1}')
+        export PAR=332
+        export BYTE_SCORE=$(wc -c 2/src/test/resources/main.lox | awk '{print $1}')
         export DIFFERENCE=$((BYTE_SCORE-PAR))
         gatorgrade --config gatorgrade.yml --report file json gatorgrade_summary.json
         cat > $GITHUB_STEP_SUMMARY << EOF 
         ![Score: $(echo $BYTE_SCORE) bytes](https://img.shields.io/badge/Score-$(echo $BYTE_SCORE)_bytes_($DIFFERENCE)-green)
         EOF
+        if [ $DIFFERENCE -eq 0 ]; then echo "[ERROR] ROUND HAS NOT BEEN PLAYED!"; exit 1; fi
       if: always()
       env:   
         PIPENV_VENV_IN_PROJECT: 1
         PIPENV_IGNORE_VIRTUALENVS: 1
-    - name: Ensure round has been played
-      run: |
-        [ $DIFFERENCE -gt 0 ]
