@@ -21,10 +21,21 @@ not up on their breakfast-adjacent programming languages, the author provides a 
 
 * [_Crafting Interpreters_, Ch. 3: The Lox Language](https://www.craftinginterpreters.com/the-lox-language.html)
 
-This repository uses the Apache Maven build platform to compile the entire interpreter (provided in the `2/src` folder).
+This repository uses the Apache Maven build platform to compile the entire interpreter (provided in the `7/src` folder).
 The challenge must be completed in the `Lox` file located at:
 
 * [7/src/test/resources/main.lox](7/src/test/resources/main.lox)
+
+### Note to players
+
+Students taking the Spring 2024 `CMPSC 201` course at Allegheny College are nothing if not generous. Beyond the language 
+documented by Nystrom, there now exist `3` updates which may help (or hinder) this work. Additional structures available:
+
+* `break` statements
+* `continue` statements
+* `ternary` expressions
+
+`break` and `continue` work similarly to `Python` and other languages; `ternary` expressions are Javascript-like.
 
 ## Requirements
 
