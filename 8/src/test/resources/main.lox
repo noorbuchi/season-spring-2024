@@ -1,21 +1,5 @@
-fun abs(number) {
-  if (number < 0) {
-    return number * -1;
-  }
-  return number;
-}
-
 fun length(number) {
-  var len = 1;
-  number = abs(number);
-  for(;;) {
-    number = number / 10;
-    if (number < 1) {
-      break;
-    }
-    len = len + 1;
-  }
-  return len;
+  return number;
 }
 
 for(var i = -14900; i <= 19890; i = i + 908){

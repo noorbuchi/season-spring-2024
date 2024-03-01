@@ -1,13 +1,17 @@
 ![Green square on deep blue background with words "Allegheny Code Golf Association" in foreground, white](https://github.com/allegheny-college-cmpsc-201-spring-2024/golf/assets/1552764/d3ee6a91-74c9-482b-84eb-ec9a2e8dee05)
 
 [![Language: Lox](https://img.shields.io/badge/Language-Lox-purple.svg)](https://www.craftinginterpreters.com/the-lox-language.html)
-![Par: 135 bytes](https://img.shields.io/badge/Par-218_bytes-green)
+![Par: 332 bytes](https://img.shields.io/badge/Par-218_bytes-green)
 
 # ⛳ Code Golf: Hole 8 - How Long (Does This Number Go On)?
 
+The one problem with numbers is that they're big. After the Commissioner exhausted using their fingers for this challenge, they _almost_
+lost interest. But, lucky for everyone, it became clear that there's something to being able to tell how many digits a number has
+using special tools that can count to more than `10`! Your task in this golf challenge is to write a program that returns the amount
+of numbers in a set of integer numbers (negative to positive). The `for` loop that generates numbers in the code provided is _required_,
+as it provides material for testing solutions.
 
-
-As if that wasn't enough, you are required to complete this challenge in the `Lox` language, an interpreted language
+You are required to complete this challenge in the `Lox` language, an interpreted language
 developed by Robert Nystrom in his book [_Crafting Interpreters_](https://www.craftinginterpreters.com/). For those
 not up on their breakfast-adjacent programming languages, the author provides a language overview at the link below:
 
@@ -17,6 +21,12 @@ This repository uses the Apache Maven build platform to compile the entire inter
 The challenge must be completed in the `Lox` file located at:
 
 * [8/src/test/resources/main.lox](2/src/test/resources/main.lox)
+
+## Tips
+
+Tips for golfing are available as general pointers:
+
+* [General tips for golfing with any language](https://codegolf.stackexchange.com/questions/5285/tips-for-golfing-in-all-languages)
 
 ## Requirements
 
