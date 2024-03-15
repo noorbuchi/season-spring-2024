@@ -1,11 +1,1 @@
-{years : ,
-  years :# {year,
-    (year 4 :% 0 = year 100 :% 0 =! &) year 400 :% 0 = | {
-      "$year" println
-    } ?
-  };
-}:are_leaps;
-
-[1300 3100] R :years;
-
-years are_leaps
+.# Today is a good day to golf.
