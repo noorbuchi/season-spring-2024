@@ -6,6 +6,6 @@
   };
 }:are_leaps;
 
-[1840 2040] R :years;
+[1300 3100] R :years;
 
 years are_leaps

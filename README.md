@@ -1,37 +1,22 @@
 ![Green square on deep blue background with words "Allegheny Code Golf Association" in foreground, white](https://github.com/allegheny-college-cmpsc-201-spring-2024/golf/assets/1552764/d3ee6a91-74c9-482b-84eb-ec9a2e8dee05)
 
-[![Language: Lox](https://img.shields.io/badge/Language-Lox-purple.svg)](https://www.craftinginterpreters.com/the-lox-language.html)
-![Par: 332 bytes](https://img.shields.io/badge/Par-218_bytes-green)
+[![Language: Aya](https://img.shields.io/badge/Language-Aya-gray.svg)](https://aya-readthedocs.readthedocs.io/en/latest/index.html)
+![Par: 176 bytes](https://img.shields.io/badge/Par-176_bytes-green)
 
-# ⛳ Code Golf: Hole 8 - How Long (Does This Number Go On)?
+# ⛳ Code Golf: Hole 9 - It Might Be a Leap Year, But What If It Aya-n't?
 
-The one problem with numbers is that they're big. After the Commissioner exhausted using their fingers for this challenge, they _almost_
-lost interest. But, lucky for everyone, it became clear that there's something to being able to tell how many digits a number has
-using special tools that can count to more than `10`! Your task in this golf challenge is to write a program that returns the amount
-of numbers in a set of integer numbers (negative to positive). The `for` loop that generates numbers in the code provided is _required_,
-as it provides material for testing solutions.
 
-You are required to complete this challenge in the `Lox` language, an interpreted language
-developed by Robert Nystrom in his book [_Crafting Interpreters_](https://www.craftinginterpreters.com/). For those
-not up on their breakfast-adjacent programming languages, the author provides a language overview at the link below:
 
-* [_Crafting Interpreters_, Ch. 3: The Lox Language](https://www.craftinginterpreters.com/the-lox-language.html)
 
 This repository uses the Apache Maven build platform to compile the entire interpreter (provided in the `8/src` folder).
-The challenge must be completed in the `Lox` file located at:
+The challenge must be completed in the `Aya` file located at:
 
-* [8/src/test/resources/main.lox](2/src/test/resources/main.lox)
+* [9/src/test/resources/main.aya](9/src/test/resources/main.aya)
 
 ### Note to players
 
-Students taking the Spring 2024 `CMPSC 201` course at Allegheny College are nothing if not generous. Beyond the language
-documented by Nystrom, there now exist `3` updates which may help (or hinder) this work. Additional structures available:
-
-* `break` statements
-* `continue` statements
-* `ternary` expressions
-
-`break` and `continue` work similarly to `Python` and other languages; `ternary` expressions are Javascript-like.
+This language is a proper golf language _and_ has an expanded real syntax. Once you solve the longer-hand "real" version,
+you'll gain extra by trying to golf the solution further by taking advantage of Aya's compressed syntax.
 
 ## Tips
 

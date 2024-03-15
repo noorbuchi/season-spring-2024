@@ -1,4 +1,4 @@
-package com.interpreter.lox;
+package com.golf.nine;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -16,6 +16,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import aya.InteractiveAya;
 
 class BaseTests {
 
@@ -37,11 +39,11 @@ class BaseTests {
   }
 
   static Stream<Arguments> testProgramOutput() throws Exception {
-    URL resource = BaseTests.class.getClassLoader().getResource("main.lox");
+    URL resource = BaseTests.class.getClassLoader().getResource("main.aya");
     File file = Paths.get(resource.toURI()).toFile();
     String absPath = file.getAbsolutePath();
     return Stream.of(
-      Arguments.of((Object) new String[]{absPath})
+      Arguments.of((Object) new String[]{"",absPath})
     );
   }
 
@@ -54,7 +56,7 @@ class BaseTests {
   @MethodSource
   @ParameterizedTest
   void testProgramOutput(String[] args) throws Exception {
-    Main.main(args);
+    InteractiveAya.main(args);
     assertEquals(
       getFullProgramTestOutput().trim(),
       outContent.toString().strip()

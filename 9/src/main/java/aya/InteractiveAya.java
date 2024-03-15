@@ -353,7 +353,7 @@ public class InteractiveAya extends Thread {
 			e.printStackTrace(aya.getErr());
 		}
 		
-		System.exit(1);
+		//System.exit(0);
 	}
 	
 	private void queueScript(String script) {

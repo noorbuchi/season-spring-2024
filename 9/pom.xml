@@ -116,7 +116,7 @@
           </dependencies>
           <configuration>
             <additionalClasspathElements>
-    					<additionalClasspathElement>${session.executionRootDirectory}/src/test/java/com/golf/two/*Tests.java</additionalClasspathElement>
+    					<additionalClasspathElement>${session.executionRootDirectory}/src/test/java/com/golf/nine/*Tests.java</additionalClasspathElement>
             </additionalClasspathElements>
     			</configuration>
         </plugin>
