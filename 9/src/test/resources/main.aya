@@ -1,0 +1,11 @@
+{years : ,
+  years :# {year,
+    (year 4 :% 0 = year 100 :% 0 =! &) year 400 :% 0 = | {
+      "$year" println
+    } ?
+  };
+}:are_leaps;
+
+[1840 2040] R :years;
+
+years are_leaps
