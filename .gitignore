@@ -25,3 +25,6 @@ replay_pid*
 
 # Maven products
 **/target/
+
+# Aya libraries
+!9/src/main/resources/java-math-numerical.jar
