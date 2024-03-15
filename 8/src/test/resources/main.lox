@@ -1,7 +1,0 @@
-fun length(number) {
-  return number;
-}
-
-for(var i = -14900; i <= 19890; i = i + 908){
-  print length(i);
-}
