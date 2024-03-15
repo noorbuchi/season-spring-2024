@@ -1,1 +1,1 @@
-fun d(a,b){if(a>=b){return d(a-b,b);}return a==0;}for(var i=1;i<=1000;i=i+1){var r="";d(i,3)?r="Fizz":0;d(i,5)?r=r+"Buzz":0;r==""?r=i:0;print r;}
+fun d(a,b){return a>=b?d(a-b,b):a==0;}for(var i=1;i<=1000;i=i+1){var r="";d(i,3)?r="Fizz":0;d(i,5)?r=r+"Buzz":0;r==""?r=i:0;print r;}
