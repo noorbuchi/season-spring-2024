@@ -1,8 +1,8 @@
-name: Round 8
+name: Round 9
 
 on:
   push:
-    branches: [round-8]
+    branches: [round-9]
 
 jobs: 
   Score:
@@ -32,8 +32,8 @@ jobs:
     - name: Score Round 8
       id: score
       run: |
-        export PAR=332
-        export BYTE_SCORE=$(wc -c 2/src/test/resources/main.lox | awk '{print $1}')
+        export PAR=176
+        export BYTE_SCORE=$(wc -c 9/src/test/resources/main.aya | awk '{print $1}')
         export DIFFERENCE=$((BYTE_SCORE-PAR))
         gatorgrade --config gatorgrade.yml --report file json gatorgrade_summary.json
         cat > $GITHUB_STEP_SUMMARY << EOF 
